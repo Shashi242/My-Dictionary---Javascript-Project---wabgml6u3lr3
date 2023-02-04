@@ -171,6 +171,13 @@
     margin-top: 5%;
     margin-bottom: 10%;
 }
+.mp3icon{
+    height: 60%;
+    width: 2%;
+    margin-left: 2%;
+    margin-top: 0.7%;
+    cursor: pointer;
+}
 
 /* Responsive */
 @media screen and (max-width: 673px){
@@ -241,5 +248,11 @@
         font-size: 16px;
         margin-top: 9%;
         margin-bottom: 36%;
+    }
+    .mp3icon {
+        height: 60%;
+        width: 5%;
+        margin-left: 4%;
+        margin-top: 2.7%;
     }
 }
