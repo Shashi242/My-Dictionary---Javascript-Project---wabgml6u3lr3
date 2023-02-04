@@ -47,7 +47,7 @@ function deletediv(currentElement){
         document.querySelector(".history").innerHTML = "<div class='empty'><img src='https://cdn-icons-png.flaticon.com/512/1380/1380641.png' alt='image'><span>Your searching history is empty</span></div>";
     }
 }
-
+let res;
 search.addEventListener("click",()=>{
     document.querySelector(".searching").innerText = "Searching for the meaning....";
     let inVal = inp.value;
@@ -59,11 +59,20 @@ search.addEventListener("click",()=>{
         }
         else{
             localStorage.setItem(`${inVal}`,data[0].meanings[0].definitions[0].definition);
-            document.querySelector(".result").innerHTML = data[0].meanings[0].definitions[0].definition;
-            document.querySelector(".inpword").innerText = inVal;
+            document.querySelector(".result").innerHTML = data[0].meanings[0].definitions[0].definition+"<br><br>Example: "+data[0].meanings[0].definitions[0].example;
+            document.querySelector(".inpword").innerHTML = inVal+"<img src='https://cdn-icons-png.flaticon.com/512/727/727269.png' alt='logo' class='mp3icon' onclick='playmp3()'>";
             inp.value = "";
         }
         document.querySelector(".searching").innerText = "";
+        res = data;
     });
 });
 
+function playmp3(){
+    if(res[0].phonetics[0].audio==""){
+        alert("Sorry! \nNo audio for this word!");
+    }
+    else{
+        document.querySelector(".play").innerHTML = "<audio src="+res[0].phonetics[0].audio+" controls autoplay hidden></audio>";
+    }
+}
