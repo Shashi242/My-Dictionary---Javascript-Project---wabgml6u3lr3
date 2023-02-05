@@ -4,6 +4,7 @@ let hist = document.getElementById("history");
 let main = document.querySelector(".maindiv");
 
 hist.addEventListener("click", () => {
+    document.querySelector(".hist-text").style.display = "block";
     if(hist.innerText == "HISTORY"){
         document.querySelector(".searchpage").style.display = "none";
         document.getElementById("result").style.display = "none";
@@ -29,6 +30,7 @@ hist.addEventListener("click", () => {
         }
     }
     else if(hist.innerText == "SEARCH"){
+        document.querySelector(".hist-text").style.display = "none";
         document.querySelector(".history").innerHTML = "";
         document.querySelector(".history").style.display = "none";
         document.querySelector(".searchpage").style.display = "flex";
