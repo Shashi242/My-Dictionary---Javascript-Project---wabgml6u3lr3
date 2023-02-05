@@ -209,6 +209,7 @@
     .header {
         background-color: bisque;
         box-shadow: 0 0 8px black;
+        height: 120px;
     }
     .search-text {
         margin-top: 17%;
